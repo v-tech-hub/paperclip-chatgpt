@@ -26,7 +26,7 @@ Keep upstream Paperclip as Core and let a **live ChatGPT Web conversation** act 
 - [x] Create upstream-linked fork and working development branch.
 - [x] Confirm first-party public MCP/OAuth exists in upstream.
 - [x] Add operator/runbook documentation and read-only health diagnostics.
-- [ ] Local `pnpm install`, start server and confirm healthy `/api/health`.
+- [x] Local `pnpm install`, build dashboard, start server and confirm healthy `/api/health` (verified on macOS Dev Host; Ubuntu host unavailable).
 - [ ] Admin enables Assistant connections in authenticated instance.
 - [ ] HTTPS deployment with appropriate proxy/auth/rate limits for browser MCP.
 - [ ] Explicit user OAuth grants ChatGPT connection.
