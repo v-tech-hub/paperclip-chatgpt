@@ -18,9 +18,14 @@ Use the **existing** Paperclip Core, browser dashboard, database, governance, an
 See `AGENTS.md` for current upstream development steps. With Node.js and pnpm installed:
 
 ```sh
-pnpm install
-pnpm dev
+pnpm install --frozen-lockfile
+pnpm db:migrate
+pnpm --filter @paperclipai/plugin-sdk ensure-build-deps
+pnpm --filter @paperclipai/server prepare:ui-dist
+pnpm dev:server
 ```
+
+This lightweight path serves the dashboard/API without first building the native Rust agent runner, which is not used by this ChatGPT-Web-only MVP. The full upstream `pnpm dev` path remains available if native agents are required later.
 
 Open `http://localhost:3100` and finish the initial onboarding with **real authenticated human accounts**. PGlite is available locally if `DATABASE_URL` is unset. For a public browser connector, deploy behind authenticated HTTPS with a properly configured public origin; localhost is not remotely accessible from ChatGPT.
 
